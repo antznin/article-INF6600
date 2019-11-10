@@ -34,7 +34,8 @@
 
 \begin{document}
 
-\title[Présentation d'article INF6600]{How to address certification for multi-core based IMA platforms :
+\title[How to address certification for multi-core based IMA platforms :
+       current status and potential solutions]{How to address certification for multi-core based IMA platforms :
        current status and potential solutions} 
 \subtitle{\vspace{1em} Présentation de l'article}
 \author{ \vspace{2em} Antonin Godard} 
@@ -51,6 +52,26 @@
   \tableofcontents
 \end{frame}
 
+\section{Introduction}%
+\label{sec:introduction}
+
+
+\begin{frame}{Introduction}
+	L'industrie aérienne évolue rapidement...	
+	\begin{itemize}
+		\item de plus en plus de sûreté assurée par l'électronique
+		\item contraintes environnementales
+		\item[$\rightarrow$] électronique plus petite
+		\item[$\rightarrow$] qui consomme moins
+		\item[$\rightarrow$] plus légère
+	\end{itemize}
+	
+	\begin{alertblock}{Résultat :}
+		Toutes ces contraintes demandent un partitionnement et des niveaux de sûreté
+		\textbf{bien définis} !
+	\end{alertblock}
+
+\end{frame}
 
 \section{Expliquons le titre…} 
 \begin{frame}[t]{Multicore based IMA} 
@@ -62,8 +83,7 @@
        \end{mdframed}
   \end{center}
   
-  \begin{itemize}
-      \item De modules LRU à un AMI :
+      De modules LRU à un AMI :
       \begin{itemize}
           \item \textit{Line Replacable Unit} : module d'un avion effectuant une fonction spécifique, et qui est \textbf{remplaçable} rapidement. \\
           \begin{center}
@@ -71,9 +91,8 @@
           \end{center}
           \item \textit{Avionique Modulaire Integré} : système \textbf{temps réel} qui permet de rassembler plusieurs 
           modules de calcul permettant de réaliser des fonctions différentes, à plusieurs \textbf{niveaux de criticité} \\
-          Ici, on parle d'AMI multi-coeurs
       \end{itemize}
-  \end{itemize}
+	  Ici, on parlera d'AMI \textbf{multi-coeurs}
 \end{frame}
 
 \begin{frame}[t]{Multicore based IMA}
@@ -109,7 +128,7 @@
 \end{frame}
 
 
-\begin{frame}[t]{Multicore based IMA} 
+\begin{frame}[t]{Certification} 
   
   \begin{center}
     \begin{mdframed}[style=yellowbox]
@@ -118,12 +137,37 @@
        \end{mdframed}
   \end{center}
 
-    \begin{block}{Problématique}
+	\begin{block}{Système certifié}
+	 Système qui répond à des \textbf{standards} de sûreté et de sécurité
+	\end{block}
 
-    Peut-on atteindre une meilleure performance et le même niveau de déterminisme qu'un AMI mono-coeur sur un 
-    AMI multi-coeurs ?
+\end{frame}
 
-  \end{block}
+\begin{frame}{Problématique} 
+
+	\begin{block}{Problématique de l'article}
+	Peut-on atteindre une meilleure performance et le même niveau de déterminisme qu'un AMI mono-coeur sur un 
+	AMI multi-coeurs ?
+	\end{block}
+
+	  Enjeux : \pause
+  \begin{columns}
+	  \begin{column}{0.45\textwidth}
+		  \begin{itemize}
+		  	\item Performance CPU \pause
+			\item Ressources mémoires\pause
+			\item Bande passante I/O \pause
+			\item Sûreté suffisante \pause
+		  \end{itemize}
+	  \end{column}
+	  \begin{column}{0.45\textwidth}
+		  \begin{itemize}
+			  \item Comportement déterministe et prédisible \pause
+		      \item Partitionnement temps CPU et de ressources sûr \pause
+			  \item Certifiable
+		  \end{itemize}
+	  \end{column}
+  \end{columns}
  
 \end{frame}
 
@@ -147,7 +191,7 @@
 \subsection{Enumerate}
 \begin{frame}{Enumerate}
 \begin{columns}
-  \begin{column}[l]{0.45\paperwidth}
+  \begin{column}{0.45\paperwidth}
       \begin{enumerate}
         \item Lorem ;
         \item<2-> Ipsum ;
@@ -156,7 +200,7 @@
       \end{enumerate}
   \end{column}
 
-  \begin{column}[r]{0.45\paperwidth}
+  \begin{column}{0.45\paperwidth}
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur 
     ultricies, dui ac luctus pellentesque, nunc dui lobortis lorem, nec 
     porta mauris massa vel ante. Maecenas justo nisl, sodales quis 
@@ -209,3 +253,5 @@
 \end{frame}
 
 \end{document}
+
+% vim: set ts=4 sw=4 tw=90 noet :

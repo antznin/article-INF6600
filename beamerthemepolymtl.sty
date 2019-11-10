@@ -107,15 +107,11 @@
 {
 %\leavevmode%
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=1em,sep=0.2em]{footerline}
-    \insertshorttitle\;--\;\insertshortauthor \hfill %
+    \insertshorttitle\;\hfill %
     \ifx\beamer@polymtl@numbering\beamer@polymtl@value@false\relax\else
-        \insertframenumber/\inserttotalframenumber\;--\; %
+        \insertframenumber/\inserttotalframenumber %
     \fi
-    \ifx\beamer@polymtl@url\beamer@polymtl@value@empty
-        {\bfseries www.polymtl.ca}
-    \else
-        {\bfseries \beamer@polymtl@url}
-    \fi
+	{\bfseries \beamer@polymtl@url}
   \end{beamercolorbox}  
 }
 
