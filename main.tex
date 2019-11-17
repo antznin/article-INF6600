@@ -206,21 +206,21 @@
 	Peut-on atteindre une meilleure performance et le même niveau de déterminisme qu'un AMI mono-coeur sur un 
 	AMI multi-coeurs ?
 	\end{block}
-
-	  Enjeux : \pause
+    \pause
+	  Enjeux :
   \begin{columns}
 	  \begin{column}{0.45\textwidth}
 		  \begin{itemize}
-		  	\item Performance CPU \pause
-			\item Ressources mémoires\pause
-			\item Bande passante I/O \pause
-			\item Sûreté suffisante \pause
+		  	\item Performance CPU 
+			\item Ressources mémoires
+			\item Bande passante I/O 
+			\item Sûreté suffisante
 		  \end{itemize}
 	  \end{column}
 	  \begin{column}{0.45\textwidth}
 		  \begin{itemize}
-			  \item Comportement déterministe et prédisible \pause
-		      \item Partitionnement temps CPU et de ressources sûr \pause
+			  \item Comportement déterministe et prédisible
+		      \item Partitionnement temps CPU et de ressources sûr
 			  \item Certifiable
 		  \end{itemize}
 	  \end{column}
@@ -232,18 +232,19 @@
 \label{sec:certification}
  
 \begin{frame}{Certification de processeur multi-coeurs}
-	Jusqu'à aujourd'hui :\pause
+	Jusqu'à aujourd'hui :
 	\begin{itemize}
-		\item processeur mono-coeur\pause
-		\item architecture RISC\pause
-		\item beaucoup de \textit{In Service Experience}\pause
+		\item processeur mono-coeur
+		\item architecture RISC
+		\item beaucoup de \textit{In Service Experience}
 	\end{itemize}
-	Avec les nouveaux AMI :\pause
+	\pause
+	Avec les nouveaux AMI :
 	\begin{itemize}
-		\item processeurs multi-coeur\pause
-		\item mêmes fonctionnalités que mono-coeur\pause
-		\item + communication inter-processeurs / parallélisation / ajout de caches...\pause
-		\item peu de documentation car technologies récentes\pause
+		\item processeurs multi-coeur
+		\item mêmes fonctionnalités que mono-coeur
+		\item + communication inter-processeurs / parallélisation / ajout de caches...
+		\item peu de documentation car technologies récentes
 		\item[$\rightarrow$] difficiles à certifier
 	\end{itemize}
 \end{frame}
@@ -308,16 +309,13 @@
 	\begin{itemize}
 		\item[$\rightarrow$] Input : données de taille variables que les processeurs
 			lisent ou modifient
-		\item[$\rightarrow$] On mesure le thoughput\pause
+		\item[$\rightarrow$] On mesure le thoughput
 	\end{itemize}
 	\medskip
 \end{frame}
 
 \begin{frame}{Partage de cache}
 
-	% \hspace{0.2cm}{\tiny L1 = 64Kbytes/L1 + L2 $\simeq$ 2Mbytes \hspace{2.1cm} L1 = 128Kbytes/L1+ L2 $\simeq$
-	% 750Kbytes} \\
-	% \hspace{0.2cm}{\tiny L2 partagée \hspace{4.67cm} L2 non-partagée}
 	\begin{center}
 		\begingroup
 		\footnotesize
@@ -351,10 +349,6 @@
 \end{frame}
 
 \begin{frame}{Cohérence de cache}
-
-	% \hspace{0.2cm}{\small\textbf{Intel :} L1 = 64Kbytes/ L1 + L2 $\simeq$ 2Mbytes / L2 partagée } \\
-	
-	% \hspace{0.2cm}{\small\textbf{AMD :} L1 = 128Kbytes/ L1+ L2 $\simeq$ 750Kbytes / L2 non-partagée}
 
 	\begin{center}
 		\begin{tabular}{r|ccc}
