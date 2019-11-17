@@ -83,24 +83,38 @@
 }
 
 % HEADER
-\defbeamertemplate*{headline}{polymtl}%
+
+\defbeamertemplate*{headline}{polymtl}
 {
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=1em,sep=0.6em]{headerline title}
-    \begin{minipage}{\beamer@polymtl@restofmenuwidth}
-        {\tiny{\bfseries POLYTECHNIQUE} MONTR\'EAL}%
-    \end{minipage}
-    \hspace{0px}
-    \begin{minipage}{\beamer@polymtl@menuwidth}
-      \begin{flushright}
-        \insertsectionnavigationhorizontal{\beamer@polymtl@menuwidth}{}{}
-      \end{flushright}
-    \end{minipage}
-    
-  \end{beamercolorbox}
-  \begin{beamercolorbox}[wd=\paperwidth,sep=1px]{headerline border}
-    \vspace{1px}
-  \end{beamercolorbox}
+	\begin{beamercolorbox}[wd=\paperwidth,leftskip=1em,sep=0.6em]{headerline title}
+		\begin{minipage}{\beamer@polymtl@restofmenuwidth}
+			{\tiny{\bfseries POLYTECHNIQUE} MONTR\'EAL}%
+		\end{minipage}
+	\end{beamercolorbox}
+
+	\begin{beamercolorbox}[wd=\paperwidth]{headerline title}
+		\vskip2pt\insertnavigation{\paperwidth}\vskip5pt		
+	\end{beamercolorbox}
 }
+
+% \defbeamertemplate*{headline}{polymtl}%
+% {
+%   \begin{beamercolorbox}[wd=\paperwidth,leftskip=1em,sep=0.6em]{headerline title}
+%     \begin{minipage}{\beamer@polymtl@restofmenuwidth}
+%         {\tiny{\bfseries POLYTECHNIQUE} MONTR\'EAL}%
+%     \end{minipage}
+%     \hspace{0px}
+    
+%   \end{beamercolorbox}
+%   % \begin{beamercolorbox}[wd=\paperwidth,sep=1px]{headerline title}
+%   %   % \vspace{1px}
+%   %   \begin{minipage}{\beamer@polymtl@menuwidth}
+% 	 % \begin{flushright}
+%   %       \insertsectionnavigationhorizontal{\beamer@polymtl@menuwidth}{}{}
+% 	 % \end{flushright}
+%   %   \end{minipage}
+%   % \end{beamercolorbox}
+% }
 
 % FOOTER
 \defbeamertemplate*{footline}{polymtl}
@@ -119,10 +133,10 @@
 % SECTION LIST
 \usesectionheadtemplate
 { %active
-  \color{polymtlred} \insertsectionhead
+  \color{polymtlred}\hskip-2pt\insertsectionhead
 }
 { %other
-  \color{polymtllightgrey} \insertsectionhead
+  \color{polymtllightgrey}\hskip-2pt\insertsectionhead
 }
 
 % BACKGROUND IMAGE
