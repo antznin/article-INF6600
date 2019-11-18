@@ -100,7 +100,7 @@
       De modules LRU à un AMI :
       \begin{itemize}
           \item \textit{Line Replacable Unit} : module d'un avion effectuant une fonction
-			  spécifique, et qui est \textbf{remplaçable} rapidement. \\\pause
+			  spécifique, et qui est \textbf{remplaçable} rapidement. \\
           \begin{center}
               $\downarrow$
           \end{center}
@@ -108,7 +108,7 @@
           modules de calcul permettant de réaliser des fonctions différentes, à plusieurs
 		  \textbf{niveaux de criticité} \\\pause
       \end{itemize}
-	  Ici, on parlera d'AMI \textbf{multi-coeurs}
+	  Ici, on parlera d'AMI \textbf{multi-cœurs}
 \end{frame}
 
 \begin{frame}[t]{Expliquons le titre\ldots}
@@ -189,12 +189,12 @@
 
 \begin{frame}{Canaux d'interférences}
 	Canaux d'interférences \textit{software} et \textit{hardware} entre les partitions
-	dans un AMI multi-coeurs
+	dans un AMI multi-cœurs
 	\bigskip
 	\begin{figure}
 		\centering
-		\includegraphics[width=\linewidth]{Interference_channel_model.pdf}
-		\caption{Source : Wikipedia \cite{wiki:Interference_channel}}
+		\includegraphics[width=\linewidth]{Interference_channel_model.pdf} 
+		\caption{Source : Wikipedia \cite{wiki:Information_theory}}
 		\label{fig:Interference_channel_model}
 	\end{figure}
 \end{frame}
@@ -203,8 +203,8 @@
 \begin{frame}{Problématique} 
 
 	\begin{block}{Problématique de l'article}
-	Peut-on atteindre une meilleure performance et le même niveau de déterminisme qu'un AMI mono-coeur sur un 
-	AMI multi-coeurs ?
+	Peut-on atteindre une meilleure performance et le même niveau de déterminisme qu'un AMI mono-cœur sur un 
+	AMI multi-cœurs ?
 	\end{block}
     \pause
 	  Enjeux :
@@ -231,18 +231,18 @@
 \section[Certification]{Que prendre en compte pour la certification?}%
 \label{sec:certification}
  
-\begin{frame}{Certification de processeur multi-coeurs}
+\begin{frame}{Certification de processeur multi-cœurs}
 	Jusqu'à aujourd'hui :
 	\begin{itemize}
-		\item processeur mono-coeur
+		\item processeur mono-cœur
 		\item architecture RISC
 		\item beaucoup de \textit{In Service Experience}
 	\end{itemize}
 	\pause
 	Avec les nouveaux AMI :
 	\begin{itemize}
-		\item processeurs multi-coeur
-		\item mêmes fonctionnalités que mono-coeur
+		\item processeurs multi-cœur
+		\item mêmes fonctionnalités que mono-cœur
 		\item + communication inter-processeurs / parallélisation / ajout de caches...
 		\item peu de documentation car technologies récentes
 		\item[$\rightarrow$] difficiles à certifier
@@ -251,7 +251,7 @@
 
 \begin{frame}{Détection d'erreurs et correction}
 	\begin{itemize}
-		\item Les processeurs multi-coeurs sont plus sensibles aux interférences\pause
+		\item Les processeurs multi-cœurs sont plus sensibles aux interférences\pause
 		\item Besoin d'une protection ECC (Error Correction Code)\pause
 		\item Redondance afin de minimiser les erreurs
 	\end{itemize}
@@ -260,12 +260,12 @@
 \begin{frame}{Partionnement du temps et des ressources}
 	\begin{itemize}
 		\item Pas de différence majeure pour le partitionnement des ressources entre mono
-			et multi-coeurs\pause
-		\item Pour le partitionnement du temps c'est plus compliqué :\pause
+			et multi-cœurs\pause
+		\item Pour le partitionnement du temps c'est plus compliqué :
 			\begin{itemize}
-				\item Sur un mono-coeur : un seul thread à la fois, qui peut être
-					interrompu\pause
-				\item Sur un multi-coeur, éxecution concurrente donc interférences entre
+				\item Sur un mono-cœur : un seul thread à la fois, qui peut être
+					interrompu
+				\item Sur un multi-cœur, éxecution concurrente donc interférences entre
 					processus
 			\end{itemize}
 	\end{itemize}
@@ -273,11 +273,11 @@
 
 \section[CI physiques]{Canaux d'interférences physiques}
 
-\begin{frame}{Architecture d'un processeur AMI multi-coeur}
+\begin{frame}{Architecture d'un processeur AMI multi-cœur}
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.7\linewidth]{arch.png}
-		\caption{Architecture d'un CPU deux coeurs \cite{Fuch}}
+		\caption{Architecture d'un CPU deux cœurs \cite{Fuch}}
 		\label{fig:arch}
 	\end{figure}	
 \end{frame}
@@ -309,7 +309,7 @@
 	\begin{itemize}
 		\item[$\rightarrow$] Input : données de taille variables que les processeurs
 			lisent ou modifient
-		\item[$\rightarrow$] On mesure le thoughput
+		\item[$\rightarrow$] On mesure le throughput
 	\end{itemize}
 	\medskip
 \end{frame}
@@ -346,6 +346,9 @@
 		\caption{Transitions entre états d'une ligne de cache \cite{wiki:MSI_protocol}}
 		\label{fig:State_di}
 	\end{figure}
+	\begin{itemize}
+		\item[\faWarning] Faux-partages
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Cohérence de cache}
@@ -398,7 +401,7 @@
 			Approche AMP (asymmetric multi\-processing) :
 				\begin{itemize}
 					\item[$+$] le software n'a pas besoin de savoir que le processeur est
-						multi-coeur
+						multi-cœur
 					\item[$+$] software optimisé pour la tâche associée
 					\item[$-$] instances certifiée au niveau maximum car elles ont un
 						processeur exclusif 
@@ -451,7 +454,7 @@
 			\end{itemize}
 		\item Parallélisation par instruction :
 			\begin{itemize}
-				\item[$+$] OpenMP permet de répartir un calcul sur plusieurs coeurs
+				\item[$+$] OpenMP permet de répartir un calcul sur plusieurs cœurs
 				\item[$-$] données partagées donc faux partage possible 
 			\end{itemize}
 	\end{itemize}
@@ -480,7 +483,7 @@
 
 \begin{frame}{Conclusion}
 	\begin{itemize}
-		\item Les CPUs multi-coeurs vont devenir une nécéssité dans l'avionique\pause
+		\item Les CPUs multi-cœurs vont devenir une nécéssité dans l'avionique\pause
 		\item Besoin de \textit{In Service Experience} sur des systèmes \textbf{moins
 			critiques}\pause
 		\item Besoin d'un design réfléchi et examiné au plus près \pause
